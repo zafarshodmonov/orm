@@ -31,8 +31,12 @@ session = Session()
 # session.commit()  # O‘zgarishlarni bazaga saqlash
 # session.close()  # Sessionni yopish
 
-users = session.query(User).all()
-for user in users:
-    print(user.id, user.name, user.age)
+# users = session.query(User).all()
+# for user in users:
+#     print(user.id, user.name, user.age)
+
+user = session.query(User).filter_by(id=1).first()
+print(user.name, user.age)
+
 
 
